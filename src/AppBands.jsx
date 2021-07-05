@@ -39,6 +39,10 @@ const AppBands = () => {
      setBands(bands)
     })
   }, [socket])
+
+  const votar = (id)=>{
+      socket.emit('votar-banda',id)
+  }
   return (
     <>
       <Container>
@@ -71,6 +75,7 @@ const AppBands = () => {
             <Grid item xs={12} sm={6}>
               <BandList 
               data={bands}
+              votar={votar}
               />
             </Grid>
             <Grid item xs={12} sm={6}>

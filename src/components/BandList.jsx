@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import { Delete } from "@material-ui/icons";
 
-const BandList = ({ data }) => {
+const BandList = ({ data, votar }) => {
   const [bands, setBands] = useState(data);
   useEffect(() => {
     setBands(data);
@@ -31,22 +31,22 @@ const BandList = ({ data }) => {
     );
   };
 
-  const handleBlur = (id,nombre)=>{
-
-    //TODO: DISPARAR SOCKET 
-
-  }
+  const handleBlur = (id, nombre) => {};
   const crearRows = () => {
     return bands.map((band) => (
       <TableRow key={band.uuid}>
         <TableCell>
-          <Button color="primary">+1</Button>
+          <Button
+          color="primary"
+          onClick={()=>votar(band.uuid)}>
+            +1
+          </Button>
         </TableCell>
         <TableCell>
           <TextField
             variant="outlined"
             value={band.name}
-            onBlur={()=>handleBlur(band.name,band.uuid)}
+            onBlur={() => handleBlur(band.name, band.uuid)}
             onChange={(event) => handleChangeNombre(event, band.uuid)}
           />
         </TableCell>
