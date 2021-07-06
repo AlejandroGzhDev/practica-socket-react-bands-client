@@ -1,5 +1,6 @@
 import  ReactDOM  from "react-dom";
-import AppBands from "./AppBands";
+
+import AppBandsName from "./AppBandsName";
 
 
-ReactDOM.render(<AppBands/>,document.querySelector('#root'))
+ReactDOM.render(<AppBandsName/>,document.querySelector('#root'))
