@@ -5,6 +5,7 @@ import { SocketContext } from "../context/SocketContext";
 import { Bar } from "react-chartjs-2";
 
 const BandChart = () => {
+
   const { socket } = useContext(SocketContext);
 
   const [data, setdata] = useState({});
@@ -46,7 +47,7 @@ const BandChart = () => {
   const options = {
     indexAxis: "y",
     animation: {
-        duration: 0
+      duration: 0,
     },
     elements: {
       bar: {
@@ -60,10 +61,10 @@ const BandChart = () => {
       },
       title: {
         display: true,
-        text: "Chart.js Horizontal Bar Chart",
+        text: "Bands Name The Application",
       },
     },
-  }; 
+  };
   return (
     <>
       <div>
